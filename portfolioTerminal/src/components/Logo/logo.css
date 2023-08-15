@@ -1,0 +1,26 @@
+.logo {
+  max-width: 800px;
+
+  line-height: 1.1;
+  font-weight: 800;
+  font-size: large;
+}
+
+.logo1 {
+  font-family: monospace;
+  white-space: pre;
+}
+
+@media screen and (max-width: 550px) {
+  .logo {
+    line-height: 1.1;
+    font-size: small;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .logo {
+    line-height: 1.1;
+    font-size: x-small;
+  }
+}

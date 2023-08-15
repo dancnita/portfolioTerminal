@@ -1,0 +1,28 @@
+.projects {
+  color: #e1b12cc9;
+  padding: 1em;
+}
+/* .projects .link {
+  color: #e2b433c9;
+  display: inline;
+} */
+.projTitle {
+  color: #4cd637e0;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 0.5em;
+}
+
+.projDescription {
+  display: inline-block;
+  padding: 0.1em 0 0 1em;
+  margin-bottom: 1em;
+}
+
+.projectsLink {
+  color: #e1b12cc9;
+
+  display: grid;
+  grid-template-columns: minmax(4em, 6em) auto;
+  grid-gap: 1em;
+}

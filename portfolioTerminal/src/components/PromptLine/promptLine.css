@@ -1,0 +1,14 @@
+.block {
+  display: block;
+}
+
+@media screen and (max-width: 460px) {
+  .abs {
+    position: absolute;
+
+    /* color: red; */
+  }
+  /* .promptUser {
+    display: block;
+  } */
+}
