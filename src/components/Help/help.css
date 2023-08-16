@@ -1,0 +1,7 @@
+.displayInfo {
+  color: #e1b12cc9;
+  padding-left: 1em;
+  display: grid;
+  grid-template-columns: minmax(4em, 6em) auto;
+  grid-gap: 1em;
+}

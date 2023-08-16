@@ -1,0 +1,22 @@
+.cursor {
+  color: #45bd32cb;
+  animation: blink 1s linear infinite;
+}
+.moveCursor {
+  color: transparent;
+  position: absolute;
+  display: inline;
+}
+.hideCursor {
+  display: none;
+}
+/* .abs {
+  position: absolute;
+  color: red;
+} */
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

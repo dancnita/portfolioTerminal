@@ -1,0 +1,19 @@
+.hidden {
+  text-align: start;
+  /* color: transparent; */
+  border: 0;
+  outline: 0;
+  border: 1px solid #217946;
+  outline: none !important;
+  background-color: rgb(13, 12, 13);
+
+  /* caret-color: transparent; */
+
+  /* top: 90vh;
+  left: 1rem; */
+  position: relative;
+  max-width: 1em;
+  max-height: 1em;
+
+  z-index: -1;
+}
