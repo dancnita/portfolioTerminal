@@ -20,6 +20,7 @@ function App() {
       preventScroll: true,
     });
     promptLineInputAreaRefs.current.promptLineRef.scrollIntoView();
+
     e.key === 'Enter'
       ? handleEnterPress()
       : e.key === 'ArrowUp'
@@ -52,6 +53,7 @@ function App() {
 
   const handleEnterPress = () => {
     const lastCommand = newInput;
+    console.log(lastCommand);
     setCommand((currentCommands) => {
       return [...currentCommands, lastCommand];
     });

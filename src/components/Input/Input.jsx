@@ -8,7 +8,7 @@ const Input = React.forwardRef(
         <input
           value={newInput}
           onChange={handleChange}
-          onKeyDown={handleKeyDown}
+          // onKeyDown={handleKeyDown}
           onKeyUp={handleKeyUp}
           className='hidden'
           type='text'
