@@ -70,7 +70,7 @@ function App() {
     e.relatedTarget === null ? setIsFocused(false) : null;
   }
 
-  //on mobile does not open keyboard without onclik
+  //on mobile does not open keyboard without onclik/
   function handleClick() {
     setIsFocused(true);
     promptLineInputAreaRefs.current.inputAreaRef.focus({
