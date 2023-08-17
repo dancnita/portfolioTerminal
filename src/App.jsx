@@ -11,15 +11,16 @@ function App() {
   const [command, setCommand] = useState([]);
   const [moveCursor, setMoveCursor] = useState(null);
   const [count, setCount] = useState(0);
-  const [isFocused, setIsFocused] = useState(false);
+  const [isFocused, setIsFocused] = useState(true);
 
   const promptLineInputAreaRefs = useRef(null);
 
   const handleKeyDown = (e) => {
-    promptLineInputAreaRefs.current.inputAreaRef.focus({
-      preventScroll: true,
-    });
     promptLineInputAreaRefs.current.promptLineRef.scrollIntoView();
+    // //inlocuit de onClick
+    // promptLineInputAreaRefs.current.inputAreaRef.focus({
+    //   preventScroll: true,
+    // });
 
     e.key === 'Enter'
       ? handleEnterPress()
@@ -53,7 +54,7 @@ function App() {
 
   const handleEnterPress = () => {
     const lastCommand = newInput;
-    console.log(lastCommand);
+
     setCommand((currentCommands) => {
       return [...currentCommands, lastCommand];
     });
@@ -62,47 +63,29 @@ function App() {
   };
 
   const handleKeyUp = (e) => {
-    setMoveCursor(
-      valueToMoveCursor.repeat(
-        e.target.selectionStart
-        // e.target.selectionStart === 0 ? 1 : e.target.selectionStart
-      )
-    );
+    setMoveCursor(valueToMoveCursor.repeat(e.target.selectionStart));
   };
 
   function handleBlur(e) {
-    console.log('first');
     e.relatedTarget === null ? setIsFocused(false) : null;
-
-    // setIsFocused(false);
-    //set focus
-    //on blur set focus false
   }
+
+  //on mobile does not open keyboard without onclik
   function handleClick() {
-    console.log('click container');
     setIsFocused(true);
-    // promptLineInputAreaRefs.current.inputAreaRef.focus({
-    //   preventScroll: true,
-    // });
+    promptLineInputAreaRefs.current.inputAreaRef.focus({
+      preventScroll: true,
+    });
   }
 
-  useEffect(() => {
-    promptLineInputAreaRefs.current.inputAreaRef.focus();
-    setIsFocused(true);
-    // promptLineInputAreaRefs.current.inputAreaRef === document.activeElement
-    //   ? console.log('active')
-    //   : console.log('notActive');
+  // //inlocuit de autofocus
+  //   useEffect(() => {
+  //     promptLineInputAreaRefs.current.inputAreaRef.focus();
+  //     setIsFocused(true);
 
-    //any other way to access body/window? not the  vanilla way?
-    // document.body.addEventListener('click', handleClick);
-
-    // return () => {
-    //   document.body.removeEventListener('click', handleClick);
-    // };
-  }, []);
+  //   }, []);
 
   useEffect(() => {
-    //{ behavior: 'smooth' }
     promptLineInputAreaRefs.current.promptLineRef.scrollIntoView({
       behavior: 'smooth',
     });

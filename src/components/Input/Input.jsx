@@ -9,11 +9,13 @@ const Input = React.forwardRef(
           value={newInput}
           onChange={handleChange}
           // onKeyDown={handleKeyDown}
+          //
           onKeyUp={handleKeyUp}
           className='hidden'
           type='text'
           maxLength='15'
           ref={ref}
+          autoFocus
         />
       </div>
     );
