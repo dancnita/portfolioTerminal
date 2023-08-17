@@ -1,10 +1,11 @@
 .containerInnerTerminal {
-  width: 100%;
+  width: calc(100%-0.1em);
+  position: relative;
   background-color: #242424;
   /* padding: 1em; */
   overflow-y: auto;
   position: relative;
-  border: 0.1em solid #42474e;
+  border: 0.1em solid #242424;
   border-top: transparent;
   /* width: 90vw; */
   height: 85vh;

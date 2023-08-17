@@ -2,7 +2,15 @@ import React from 'react';
 import './input.css';
 
 const Input = React.forwardRef(
-  ({ newInput, handleChange, handleKeyDown, handleKeyUp }, ref) => {
+  (
+    {
+      newInput,
+      handleChange,
+      //handleKeyDown,
+      handleKeyUp,
+    },
+    ref
+  ) => {
     return (
       <div>
         <input

@@ -3,14 +3,12 @@ import PromptLine from '../PromptLine/PromptLine';
 import { messages, commandsAvailable } from '../../utils/data';
 import PromptMsg from '../PromptMsg/PromptMsg';
 
-//import forwardRef from 'react';
-
 const Main = React.forwardRef(
   (
     {
       newInput,
       handleChange,
-      handleKeyDown,
+      //handleKeyDown,
       handleKeyUp,
       userCommands,
       moveCursor,
@@ -30,7 +28,7 @@ const Main = React.forwardRef(
         <PromptLine
           newInput={newInput}
           handleChange={handleChange}
-          handleKeyDown={handleKeyDown}
+          //handleKeyDown={handleKeyDown}
           handleKeyUp={handleKeyUp}
           promptName={messages.promptName}
           ref={ref}

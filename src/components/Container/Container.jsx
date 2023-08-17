@@ -17,7 +17,6 @@ const Container = React.forwardRef(
       text,
       handleBlur,
       isFocused,
-      // handleTouch,
     },
     ref
   ) => {
@@ -27,7 +26,6 @@ const Container = React.forwardRef(
         onClick={handleClick}
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}
-        // onTouchEnd={handleTouch}
         className='containerTerminal'
       >
         <TopBar text={text} isFocused={isFocused} />
@@ -37,7 +35,6 @@ const Container = React.forwardRef(
           <Main
             newInput={newInput}
             handleChange={handleChange}
-            //handleKeyDown={handleKeyDown}
             handleKeyUp={handleKeyUp}
             userCommands={userCommands}
             ref={ref}

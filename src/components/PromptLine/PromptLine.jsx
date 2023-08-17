@@ -13,7 +13,7 @@ const PromptLine = React.forwardRef(
     {
       newInput,
       handleChange,
-      handleKeyDown,
+      // handleKeyDown,
       handleKeyUp,
       promptName,
       moveCursor,
@@ -39,7 +39,7 @@ const PromptLine = React.forwardRef(
         <Input
           newInput={newInput}
           handleChange={handleChange}
-          handleKeyDown={handleKeyDown}
+          //handleKeyDown={handleKeyDown}
           handleKeyUp={handleKeyUp}
           ref={inputAreaRef}
         />

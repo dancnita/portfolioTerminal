@@ -1,5 +1,3 @@
-// import Header from './components/Header/Header';
-// import Main from './components/Main/Main';
 import { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { valueToMoveCursor, messages } from './utils/data';
@@ -112,16 +110,6 @@ function App() {
         handleBlur={handleBlur}
         isFocused={isFocused}
       ></Container>
-      {/* <Header />
-      <Main
-        newInput={newInput}
-        handleChange={handleNewInput}
-        handleKeyDown={handleKeyDown}
-        handleKeyUp={handleKeyUp}
-        userCommands={command}
-        ref={promptLineInputAreaRefs}
-        moveCursor={moveCursor}
-      ></Main> */}
     </div>
   );
 }
