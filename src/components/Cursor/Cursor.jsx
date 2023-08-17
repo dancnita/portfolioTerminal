@@ -1,7 +1,7 @@
 import React from 'react';
 import './cursor.css';
 
-const Cursor = ({ moveCursor }) => {
+const Cursor = ({ moveCursor, isFocused }) => {
   //const test = -0.5;
   //console.log(moveCursor);
   return (
@@ -11,7 +11,11 @@ const Cursor = ({ moveCursor }) => {
     <>
       <span className='moveCursor'>
         {moveCursor}
-        <span className='cursor'>█</span>
+        <span
+          className={!isFocused ? 'cursorStatic' : `cursorStatic cursorBlink`}
+        >
+          █
+        </span>
       </span>
     </>
   );

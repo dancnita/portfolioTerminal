@@ -1,20 +1,25 @@
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+// import Header from './components/Header/Header';
+// import Main from './components/Main/Main';
 import { useState, useEffect, useRef } from 'react';
 import './App.css';
-import { valueToMoveCursor } from './utils/data';
-import Typewriter from './components/Typewriter/Typewriter';
+import { valueToMoveCursor, messages } from './utils/data';
+import Container from './components/Container/Container';
+// import Typewriter from './components/Typewriter/Typewriter';
 
-//on up arrow  shoe commands?
 function App() {
   const [newInput, setNewInput] = useState('');
   const [command, setCommand] = useState([]);
   const [moveCursor, setMoveCursor] = useState(null);
   const [count, setCount] = useState(0);
+  const [isFocused, setIsFocused] = useState(false);
 
   const promptLineInputAreaRefs = useRef(null);
 
   const handleKeyDown = (e) => {
+    promptLineInputAreaRefs.current.inputAreaRef.focus({
+      preventScroll: true,
+    });
+    promptLineInputAreaRefs.current.promptLineRef.scrollIntoView();
     e.key === 'Enter'
       ? handleEnterPress()
       : e.key === 'ArrowUp'
@@ -63,18 +68,35 @@ function App() {
     );
   };
 
+  function handleBlur(e) {
+    console.log('first');
+    e.relatedTarget === null ? setIsFocused(false) : null;
+
+    // setIsFocused(false);
+    //set focus
+    //on blur set focus false
+  }
   function handleClick() {
-    promptLineInputAreaRefs.current.inputAreaRef.focus();
+    console.log('click container');
+    setIsFocused(true);
+    // promptLineInputAreaRefs.current.inputAreaRef.focus({
+    //   preventScroll: true,
+    // });
   }
 
   useEffect(() => {
     promptLineInputAreaRefs.current.inputAreaRef.focus();
-    //any other way to access body/window? not the  vanilla way?
-    document.body.addEventListener('click', handleClick);
+    setIsFocused(true);
+    // promptLineInputAreaRefs.current.inputAreaRef === document.activeElement
+    //   ? console.log('active')
+    //   : console.log('notActive');
 
-    return () => {
-      document.body.removeEventListener('click', handleClick);
-    };
+    //any other way to access body/window? not the  vanilla way?
+    // document.body.addEventListener('click', handleClick);
+
+    // return () => {
+    //   document.body.removeEventListener('click', handleClick);
+    // };
   }, []);
 
   useEffect(() => {
@@ -91,8 +113,21 @@ function App() {
   };
 
   return (
-    <div>
-      <Header></Header>
+    <div style={{ overflow: 'hidden' }}>
+      <Container
+        text={messages.promptName}
+        handleClick={handleClick}
+        newInput={newInput}
+        handleChange={handleNewInput}
+        handleKeyDown={handleKeyDown}
+        handleKeyUp={handleKeyUp}
+        userCommands={command}
+        ref={promptLineInputAreaRefs}
+        moveCursor={moveCursor}
+        handleBlur={handleBlur}
+        isFocused={isFocused}
+      ></Container>
+      {/* <Header />
       <Main
         newInput={newInput}
         handleChange={handleNewInput}
@@ -101,7 +136,7 @@ function App() {
         userCommands={command}
         ref={promptLineInputAreaRefs}
         moveCursor={moveCursor}
-      ></Main>
+      ></Main> */}
     </div>
   );
 }

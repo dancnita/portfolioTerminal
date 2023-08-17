@@ -1,7 +1,10 @@
-.cursor {
+.cursorStatic {
   color: #45bd32cb;
+}
+.cursorBlink {
   animation: blink 1s linear infinite;
 }
+
 .moveCursor {
   color: transparent;
   position: absolute;
@@ -16,7 +19,12 @@
 } */
 
 @keyframes blink {
+  1%,
   50% {
+    opacity: 1;
+  }
+  60%,
+  99% {
     opacity: 0;
   }
 }

@@ -1,15 +1,20 @@
 .logo {
   max-width: 800px;
-
   line-height: 1.1;
   font-weight: 800;
   font-size: large;
 }
 
-.logo1 {
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/* .logo1 {
   font-family: monospace;
   white-space: pre;
-}
+} */
 
 @media screen and (max-width: 550px) {
   .logo {

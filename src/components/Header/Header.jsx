@@ -10,8 +10,10 @@ const Header = () => {
   const linkText2 = messages.linkText.linkText2;
   const linkText3 = messages.linkText.linkText3;
   return (
-    <>
-      <Logo></Logo>
+    <div>
+      <div className='logoContainer'>
+        <Logo></Logo>
+      </div>
       {/* <Typewriter input={messages.welcomeMsg} delayTime={100} /> */}
       <Message text={messages.welcomeMsg} />
       <Link
@@ -21,7 +23,7 @@ const Header = () => {
         linkSrc={externalLinks.portfolio}
       />
       <Message text={messages.commandsHint} />
-    </>
+    </div>
   );
 };
 

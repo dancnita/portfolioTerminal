@@ -51,8 +51,6 @@ const commandsAvailable = [
   'education',
   'socials',
   'email',
-  //'clear',
-  //'welcome?'
 ];
 
 const commandsAndDescription = {

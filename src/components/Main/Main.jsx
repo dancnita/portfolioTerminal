@@ -14,6 +14,8 @@ const Main = React.forwardRef(
       handleKeyUp,
       userCommands,
       moveCursor,
+
+      isFocused,
     },
     ref
   ) => {
@@ -33,6 +35,7 @@ const Main = React.forwardRef(
           promptName={messages.promptName}
           ref={ref}
           moveCursor={moveCursor}
+          isFocused={isFocused}
         ></PromptLine>
       </div>
     );

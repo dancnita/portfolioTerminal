@@ -35,11 +35,13 @@ a {
 
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   /* display: flex; */
   /* place-items: ; */
   min-width: 340px;
   min-height: 100vh;
-  background-color: #242424;
+  background-color: #474747;
   color: #45bd32cb;
 }
 

@@ -8,6 +8,11 @@
 
     /* color: red; */
   }
+
+  .flex {
+    display: flex;
+    flex-wrap: nowrap;
+  }
   /* .promptUser {
     display: block;
   } */

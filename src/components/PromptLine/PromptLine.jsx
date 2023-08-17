@@ -17,6 +17,8 @@ const PromptLine = React.forwardRef(
       handleKeyUp,
       promptName,
       moveCursor,
+
+      isFocused,
     },
     ref
   ) => {
@@ -41,8 +43,8 @@ const PromptLine = React.forwardRef(
           handleKeyUp={handleKeyUp}
           ref={inputAreaRef}
         />
-        <PromptText ref={promptLineRef} text={promptName} />
-        <Cursor moveCursor={moveCursor} />
+        <PromptText className='flex' ref={promptLineRef} text={promptName} />
+        <Cursor moveCursor={moveCursor} isFocused={isFocused} />
         <PromptText className='abs' text={newInput} />
       </>
     );

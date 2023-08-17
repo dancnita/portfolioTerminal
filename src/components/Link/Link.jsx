@@ -5,7 +5,7 @@ const Link = ({ className, text1, text2, text3 = null, linkSrc }) => {
   return (
     <p className={className}>
       <span>{text1}</span>
-      <a href={linkSrc} className='link'>
+      <a href={linkSrc} className='link' target='_blank'>
         {text2}
       </a>
       {text3 === null ? null : <span>{text3}</span>}
